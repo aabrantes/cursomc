@@ -11,7 +11,7 @@ criar as regras de negocios que não estão na camada de dominio
 Criar a camada repository:
 criar os CRUD de banco de dados
 
-
+adicionar os comandos de configuração do banco H2 no arquivo application.property
 banco de dados H2 para testes
 colocar as dependencias no arquivo POM.xml
 acesso ao console: localhost:8080/h2-console
