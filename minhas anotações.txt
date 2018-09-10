@@ -1,0 +1,46 @@
+Criar a classe aplicação
+
+Criar a controladores REST que são os resources
+
+Criar a camada de dominio:
+criar as anotações JPA para criar automáticamente as tabelas no banco de dados, conforme os atributos da classe.
+
+Criar a camada serviço:
+criar as regras de negocios que não estão na camada de dominio
+
+Criar a camada repository:
+criar os CRUD de banco de dados
+
+
+banco de dados H2 para testes
+colocar as dependencias no arquivo POM.xml
+acesso ao console: localhost:8080/h2-console
+jdbc:h2:mem:testdb
+
+anotações JPA - mapeamento:
+
+@Entity - essa classe vai ser uma entidade do JPA
+
+@Id
+@GeneratedValue(Strategy=GenerationType.IDENTITY) - DEFINE A ESTRATEGA DE GERAÇÃO AUTOMATICA
+ 
+ 
+Criando as interfaces repositorios herda da interface JpaRepository capaz de acessar os dados com base em um tipo 
+que passar <objeto, tipo atributo identificador do objeto>
+Anotações:
+@Repository
+
+Criando a classe de serviços.
+Necessario declarar uma dependencia da classe de um repositorio
+Anotações:
+@Service
+@Autowired - Essa dependencia será instanciada automáticamente pelo Spring por esta anotação pelo mecanismo de injeção de dependencia ou de controle.
+
+Após criar a classe serviço, precisa atualizar a classe REST para ser acapaz de buscar uma categoria.
+precisa alterar o endpoint da classe e acrescentar a anotação: @PathVariable no parametro do metodo, que seguinifica, que o valor do parametro
+passado na url vai para a variavel do método.
+
+Alterar o tipo do retorno para ResponseEntity, esse tipo de retorno irá encapsular a mensagem http para uma mensagem REST
+
+
+
